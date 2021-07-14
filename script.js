@@ -8,6 +8,12 @@ const birthMonth = 6;
 const birthYear = 2017;
 const birthDay = 15;
 
+const start = document.getElementsByClassName("start");
+const rodzice = document.getElementsByClassName("rodzice")[0];
+const zdjecia = document.getElementsByClassName("zdjecia");
+const inne = document.getElementsByClassName("inne");
+
+console.log(rodzice);
 function getNumberOfDays(start, end) {
   const date1 = new Date(start);
   const date2 = new Date(end);
@@ -68,3 +74,26 @@ let span = document.getElementsByClassName("close")[0];
 span.onclick = function () {
   image.style.display = "none";
 };
+
+function initMap() {
+  // The location of janik
+  const janik = { lat: 50.974, lng: 21.322 };
+  // The map, centered at janik
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 10,
+    center: janik,
+  });
+  // The marker, positioned at janik
+  const marker = new google.maps.Marker({
+    position: janik,
+    map: map,
+  });
+}
+
+const maper = document.getElementById("map");
+//navi functions
+
+rodzice.addEventListener("click", function () {
+  rodzice.classList.add("active");
+  maper.style.display = "block";
+});

@@ -130,3 +130,9 @@ h3 {
     transform: scale(1);
   }
 }
+#map {
+  display: none;
+  height: 300px;
+  width: 300px;
+  margin: auto;
+}
