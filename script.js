@@ -1,19 +1,29 @@
 "use strict";
+
+//QUERYSELECTORS
+
+const start = document.querySelector(".start");
+const schronisko = document.querySelector(".schronisko");
+const zdjecia = document.querySelector(".zdjecia");
+const inne = document.querySelector(".inne");
+const galeria = document.querySelector(".galeria");
+const cta = document.querySelector(".cta");
+const nav = document.querySelectorAll(".menu__");
+const stickyNav = document.body;
+const sectionIntro = document.querySelector(".section-introduction");
+const sectionHero = document.querySelector(".hero-section");
+const counters = document.querySelectorAll(".num");
+
+/////////////////
+// TRACY AGE
+
 let today = new Date();
 let year = today.getFullYear();
-let month = today.getMonth();
-let day = today.getDay();
 
 const birthMonth = 6;
 const birthYear = 2017;
 const birthDay = 15;
 
-const start = document.getElementsByClassName("start");
-const rodzice = document.getElementsByClassName("rodzice")[0];
-const zdjecia = document.getElementsByClassName("zdjecia");
-const inne = document.getElementsByClassName("inne");
-
-console.log(rodzice);
 function getNumberOfDays(start, end) {
   const date1 = new Date(start);
   const date2 = new Date(end);
@@ -41,59 +51,188 @@ const humanToDogYears = function (year) {
   return dogYear;
 };
 
-console.log();
+const monthAge = function (days) {
+  return Math.round(days / 30);
+};
 //Tracy age counter
 let daysTracy = year - birthYear;
-document.getElementById("brithTracy").innerHTML = `Tracy ma ${getNumberOfDays(
-  "6/15/2017",
-  today
-)} dni czyli około ${yearsAge(
-  getNumberOfDays("6/15/2017", today)
-)} lat ludzkich i ${humanToDogYears(
-  yearsAge(getNumberOfDays("6/15/2017", today))
-)} psich`;
 
-let image = document.getElementById("myIMG1");
+/////////////////
+//LOCATION API
 
-let img = document.getElementById("firIMG");
-let img2 = document.getElementById("secIMG");
-let img3 = document.getElementById("thrIMG");
-let modalImg = document.getElementById("img01");
-let captionText = document.getElementById("caption");
-img.onclick =
-  img2.onclick =
-  img3.onclick =
-    function () {
-      image.style.display = "block";
-      modalImg.src = this.src;
-      captionText.innerHTML = this.alt;
-    };
+const mymap = L.map("map").setView([50.974, 21.322], 12);
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution:
+    'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+}).addTo(mymap);
+const marker = L.marker([50.974, 21.322]).addTo(mymap);
 
-let span = document.getElementsByClassName("close")[0];
+//////////////////////
+// Event Listeners
+start.addEventListener("click", function () {
+  nav.forEach((ele) => ele.classList.remove("active"));
+  start.classList.add("active");
+});
 
-span.onclick = function () {
-  image.style.display = "none";
+schronisko.addEventListener("click", function () {
+  nav.forEach((ele) => ele.classList.remove("active"));
+  schronisko.classList.add("active");
+  maper.style.display = "block";
+});
+
+zdjecia.addEventListener("click", function () {
+  nav.forEach((ele) => ele.classList.remove("active"));
+  zdjecia.classList.add("active");
+});
+
+inne.addEventListener("click", function () {
+  nav.forEach((ele) => ele.classList.remove("active"));
+  inne.classList.add("active");
+});
+
+galeria.addEventListener("click", function () {
+  nav.forEach((ele) => ele.classList.remove("active"));
+  galeria.classList.add("active");
+});
+
+cta.addEventListener("click", function () {
+  nav.forEach((ele) => ele.classList.remove("active"));
+  cta.classList.add("active");
+});
+
+/////////////////////////////////////
+// Counters
+
+const speed = 10000;
+const arr = [
+  getNumberOfDays("6/15/2017", today),
+  monthAge(getNumberOfDays("6/15/2017", today)),
+  yearsAge(getNumberOfDays("6/15/2017", today)),
+  humanToDogYears(yearsAge(getNumberOfDays("6/15/2017", today))),
+];
+
+// COUNTER START OBSERVER
+const observer = new IntersectionObserver(
+  function (entries, observer) {
+    entries.forEach((entry) => {
+      counters.forEach((counter, i) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        const updateCount = () => {
+          const target = +arr[i];
+          const count = +counter.innerText;
+
+          const inc = target / speed;
+          if (count < target) {
+            counter.innerText = Math.ceil(count + inc);
+
+            setTimeout(updateCount, 1);
+          }
+        };
+        updateCount();
+      });
+    });
+  },
+  {
+    root: null,
+    rootMargin: "20px",
+    threshold: 1,
+  }
+);
+observer.observe(sectionIntro);
+///////////////////////
+
+// STICKY NAV MENU OBSERVER
+const obsNav = new IntersectionObserver(
+  function (entries, observer) {
+    entries.forEach((entry) => {
+      counters.forEach((counter, i) => {
+        if (!entry.isIntersecting) {
+          stickyNav.classList.add("sticky");
+          return;
+        }
+        stickyNav.classList.remove("sticky");
+      });
+    });
+  },
+  {
+    root: null,
+    threshold: 0,
+  }
+);
+
+obsNav.observe(sectionHero);
+
+// CAROUSEL //////////////////////////////
+
+let curSlide = 0;
+
+const slides = document.querySelectorAll(".slide");
+const slide = document.querySelector(".carousel");
+const btnLeft = document.querySelector(".left");
+const btnRight = document.querySelector(".right");
+const dotContainter = document.querySelector(".dots");
+
+const activeDot = function (slide) {
+  document
+    .querySelectorAll(".dots__dot")
+    .forEach((dot) => dot.classList.remove("dots__dot--active"));
+
+  document
+    .querySelector(`.dots__dot[data-slide="${slide}"]`)
+    .classList.add("dots__dot--active");
 };
 
-function initMap() {
-  // The location of janik
-  const janik = { lat: 50.974, lng: 21.322 };
-  // The map, centered at janik
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 10,
-    center: janik,
+const createDots = function () {
+  slides.forEach(function (_, i) {
+    dotContainter.insertAdjacentHTML(
+      "beforeend",
+      `<button class="dots__dot" data-slide="${i}"></button>`
+    );
   });
-  // The marker, positioned at janik
-  const marker = new google.maps.Marker({
-    position: janik,
-    map: map,
-  });
-}
+};
+createDots();
 
-const maper = document.getElementById("map");
-//navi functions
+activeDot(curSlide);
+slides.forEach((s, i) => (s.style.transform = `translateX(${100 * i}%)`));
+const goToSlide = function (curSlide) {
+  slides.forEach(
+    (s, i) => (s.style.transform = `translateX(${100 * (i - curSlide)}%)`)
+  );
+};
 
-rodzice.addEventListener("click", function () {
-  rodzice.classList.add("active");
-  maper.style.display = "block";
+btnRight.addEventListener("click", function () {
+  if (curSlide !== 3) {
+    curSlide++;
+    goToSlide(curSlide);
+    activeDot(curSlide);
+  } else {
+    curSlide = 0;
+    slides.forEach((s, i) => (s.style.transform = `translateX(${100 * i}%)`));
+    activeDot(curSlide);
+  }
+});
+
+btnLeft.addEventListener("click", function () {
+  if (curSlide !== 0) {
+    curSlide--;
+    goToSlide(curSlide);
+    activeDot(curSlide);
+  } else {
+    curSlide = 3;
+    slides.forEach(
+      (s, i) => (s.style.transform = `translateX(${100 * (i - curSlide)}%)`)
+    );
+    activeDot(curSlide);
+  }
+});
+
+dotContainter.addEventListener("click", function (e) {
+  if (e.target.classList.contains("dots__dot")) {
+    const { slide } = e.target.dataset;
+    goToSlide(slide);
+    activeDot(slide);
+  }
 });

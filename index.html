@@ -1,64 +1,209 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
   <head>
-    <link rel="stylesheet" href="style.css" <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css"> <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Strona Tracy Wróbel</title>
+    <title>Strona Tracy</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Shadows Into Light"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- LEAFLET -->
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+   <script defer src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+   <script defer type="text/javascript" src="script.js"></script>
   </head>
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Shadows Into Light"
-  />
-  <body class="bg">
-    <div class="topnav">
-      <a class="start active" href="#start">Start</a>
-      <a class="rodzice" href="#rodzice">Schronisko Janik</a>
-      <a class="zdjecia" href="#zdjecia">Zdjecia</a>
-      <a class="inne" href="#inne">Inne</a>
-    </div>
-    <h1 class="main-title">Tracy "Triskis" Wróbel</h1>
-    <div class="row">
-      <div class="column">
-        <img id="firIMG" src="tracy.jpg" alt="Tracy" style="width: 100%" />
-      </div>
-      <div class="column">
-        <img
-          id="secIMG"
-          src="tracy_previous.JPG"
-          alt="Tracy"
-          style="width: 100%"
-        />
-      </div>
-      <div class="column">
-        <img
-          id="thrIMG"
-          src="tracy_recent.jpg"
-          alt="Tracy"
-          style="width: 100%"
-        />
-      </div>
-    </div>
-    <div id="myIMG1" class="img1">
-      <span class="close">&times;</span>
-      <img class="img-content" id="img01" />
-      <div id="caption"></div>
-    </div>
-    <p class="intro-text">
-      Tracy pochodzi z okolic Ostrowca Świetokrzyskiego. Urodziła się w czerwcu
-      2017 roku. Jest grzeczną wysterylizowaną sunią która umila nam codzienne
-      obowiązki.
-    </p>
-    <h3 id="brithTracy">Tracy Ma</h3>
 
-    <div id="map">
-      <script
-        async
-        src="https://maps.googleapis.com/maps/api/js?keyAIzaSyDnc0HEPeNoOaJrYFl_sTwLd37qYFWtF74=&callback=initMap"
-      ></script>
-    </div>
 
-    <script type="text/javascript" src="script.js"></script>
+  <body>
+
+    <!-- NAVIGATION -->
+
+    <section class="main-nav">
+      <div class="topnav">
+        <img src="logo_transparent.png" class="logo" alt="logo tracy" />
+        <div class="nav-links">
+          <a class="start active menu__" href="#">Start</a>
+          <a class="schronisko menu__" href="#licznik">Licznik</a>
+          <a class="zdjecia menu__" href="#przygody">Przygody</a>
+          <a class="inne menu__" href="#schronisko">Schronisko</a>
+          <a class="galeria menu__" href="#galeria">Galeria</a>
+          <a class="cta menu__" href="#cta-1">Wiadomość</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero-section">
+      <section class="description--hero">
+        
+        <h1 class="main-title">Tracy "Triskis" Wróbel</h1>
+        <p class="hero-text">Witaj na mojej stronie.
+          Jestem psem kundelkiem i mam na imię Tracy,
+          chcesz mnie lepiej poznać? Dalej, naciśnij przycisk lub przewijaj dalej! </p>
+          <a href="#licznik" class="btn-hero">Czytaj wiecej &darr;</a>
+        </section>
+        <img src="043(1).jpg" alt="Tracy odpoczywa w lezu na balkonie w Szczawie" class="img-hero">
+      </section>
+
+<!-- SECTION INTRODUCTION -->
+
+      <section class="section-introduction" id="licznik">
+        <h2 class="section-title">Jak dlugo sie ciesze zyciem</h2>
+        <div class="grid-2-columns">
+          <div class="counter num">0</div>
+          <div class="counter description-1">dni</div>
+          <div class="counter num">0</div>
+          <div class="counter description-2">miesiecy</div>
+          <div class="counter num">0</div>
+          <div class="counter description-3"> pisich lat</div>
+          <div class="counter num">0</div>
+          <div class="counter description-4">ludzkich lat</div>
+        </div>
+          <div class="text">
+          <p class="description">
+            
+          </p>
+        </section>
+
+        <!-- SECTION ADVENTURES  -->
+
+        <section class="section-adventures" id="przygody">
+          <h2 class="section-title"> Moje przygody </h2>
+          <div class="adventures-cont">
+
+            <p>
+              Po prawej na zdjęciu kadr z 25 kilometrowego spaceru <strong>Niebieskim Szlakiem Warowni Jurajskich</strong>. Było cięzko ale dałam radę, trzeba było tylko <em>opiekunów</em> popędzać. Wyraźnie niemogli za mną nadazyć, ale jakoś doczłapali...
+            </p>
+
+            
+              <img class="adventures-photos" src="spacer.JPG" alt="spacer">
+
+
+            </div>
+          </div>
+
+          <div class="adventures-cont">
+          
+            <img class="adventures-photos" src="mogielica.JPG" alt="spacer">
+            
+
+          
+
+            <p>
+              Moja pierwsza wyprawa w prawidziwe <em>"Góry"</em>. Oczywiście zabrałam ze sobą opiekunów cóz dobry ze mnie Pies. Udało się zdobyć szczyt Mogielicy <strong>1170 n.p.m</strong> w niecałe 3 godziny. Myśle ze to dobry wynik!
+            </p>
+
+            
+          </div>
+          <div class="adventures-cont">
+
+            <p>
+              Tym razem postanowiłam zabrać wszystkich do Tarnowa na Góre Marcinke. Towarzyszyły nam piękne widoki i świetna pogoda. Wyszły bardzo dobre zdjęcia, takie przygody to ja lubię!
+            </p>
+
+            
+              <img src="tarnow.jpg"  class="adventures-photos" alt="spacer">
+          
+          </div>
+          
+        </section>
+
+        <!-- SECTION FROM  -->
+
+        <section class="section-from" id='schronisko'>
+        <h2 class="section-title">Skąd pochodzę </h2>
+        <div class="map-flex">
+          <div class="tracy-from">
+            <img src="tracyschronisko.jpg" alt="Tracy w schronisku" class="from-img">
+            <p class="from-text">Pierwsze miesiące zycia spedziłam w  schronisku Janik pod Ostrowcem Świętokrzyskim. Jeśli chcesz takiego fajnego psiaka jak Ja, nie kupuj, tam jest ich pełno i czekają na Ciebie! U góry jedno z moich archiwalnych zdjęć ze schroniska.</p>
+          </div>
+        
+            
+            
+          <div>
+            
+            <p class="from-addr"><strong>Schronisko dla zwierząt <italic>"Janik"</strong></italic><br>Borowska 1, 27-415 Kunów</p>
+            
+            <a href="http://www.schronisko.ostrowiec.pl/">
+              <img class="from-img" src="schronisko.jpg" >   
+            </a> 
+            <div id="map">
+              
+            </div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- SECTION CAROUSEL -->
+
+        <section class="section-carousel" id="galeria">
+          <div class="section-title">Moja mała galeria</div>
+
+          <div class="carousel">
+            
+            <div  class='slide'><img src="./img/karuzela1.JPG" alt="1"/></div>
+            <div  class='slide'><img   src="./img/karuzela2.JPG" alt="1"/></div>
+            <div  class='slide'><img src="./img/karuzela3.JPG" alt="1"/></div>
+            <div  class='slide'><img  src="./img/karuzela4.JPG" alt="1"/></div>
+            
+
+            <button class="btn left">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon-style" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+              
+            </button>
+            <button class="btn right">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon-style" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+              
+              
+            </button>
+            <div class="dots"></div>
+          </div>
+
+          
+        </section>
+        
+        <!-- SECTION CTA -->
+        <section class="cta" id="cta-1">
+          <div class="cta-box">
+            <div class="section-title color">Napisz do mnie!</div>
+
+            <form class="cta-form" action="#">
+              
+              <div>
+                  <label for="text">Wiadomość</label>
+                  <textarea class="textbox"  id="text" placeholder="Czym chcesz się ze mną podzielić?" required></textarea>
+              </div>
+
+              <div >
+                <label for="email">Twój e-mail</label>
+                <input id="email" type="email" placeholder="przykładowy@mail.com" required>
+                <button class='btn-form'>Wyślij!</button>
+              </div>
+
+
+            </form>
+          </div>
+        </section>
+      </div>
+
+    </div>
   </body>
 </html>
