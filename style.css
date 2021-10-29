@@ -74,6 +74,7 @@ support color : #B2E6C2 */
 /* TO IMPROVE STICKY NAV */
 .sticky .hero-section {
   margin-top: 50px;
+  z-index: 999;
 }
 /* HERO SECTION */
 
@@ -153,7 +154,10 @@ support color : #B2E6C2 */
   grid-row: 2/3;
 }
 .section-introduction {
-  margin-bottom: 96px;
+  border-top: solid #236c39 4px;
+  border-bottom: solid #236c39 4px;
+  padding: 100px 0;
+  margin: 200px 0;
 }
 
 .num {
@@ -165,7 +169,6 @@ support color : #B2E6C2 */
 /* SECTION ADVENTURES */
 .section-adventures {
   margin-top: 200px;
-  border-top: solid #236c39 4px;
 }
 .adventures-cont {
   display: flex;
@@ -194,7 +197,7 @@ support color : #B2E6C2 */
 /* SECTION FROM */
 
 .section-from {
-  margin: 10px 0;
+  margin: 200px 0;
   padding: 10px 0;
   background-color: #e2f6e8;
 }
@@ -240,7 +243,7 @@ support color : #B2E6C2 */
   position: relative;
   overflow: hidden;
   border-radius: 10px;
-  margin-bottom: 72px;
+  margin-bottom: 200px;
 }
 
 .slide {
@@ -262,7 +265,7 @@ support color : #B2E6C2 */
 .btn {
   position: absolute;
   top: 50%;
-  z-index: 999;
+  z-index: 100;
   border: none;
   background-color: #fff;
   height: 50px;
@@ -323,15 +326,17 @@ support color : #B2E6C2 */
 
 .cta-box {
   position: relative;
-  margin: 72px;
-  background-color: #6fd08c;
+  width: 1000px;
+  margin: 0 auto;
   border-radius: 20px;
   overflow: hidden;
+  outline: #236c39 solid 20px;
 }
 
 .cta-form {
   position: relative;
   display: flex;
+
   grid-template-columns: 1fr 1fr;
   margin-bottom: 50px;
   justify-content: center;
@@ -346,13 +351,15 @@ support color : #B2E6C2 */
   top: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.6;
-  background-image: url(./back.jpg);
+  opacity: 0.8;
+
+  background-image: url(./img/back.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .cta-form label {
+  margin-top: 30px;
   display: block;
 }
 
@@ -383,9 +390,5 @@ support color : #B2E6C2 */
   width: 200px;
   height: 32px;
   border-radius: 10px;
-  text-align: center;
-}
-
-.color {
-  color: #111;
+  padding-left: 5px;
 }

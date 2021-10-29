@@ -32,13 +32,14 @@
 
     <section class="main-nav">
       <div class="topnav">
-        <img src="logo_transparent.png" class="logo" alt="logo tracy" />
+        <img src="./img/logo_transparent.png" class="logo" alt="logo tracy" />
         <div class="nav-links">
           <a class="start active menu__" href="#">Start</a>
-          <a class="schronisko menu__" href="#licznik">Licznik</a>
           <a class="zdjecia menu__" href="#przygody">Przygody</a>
-          <a class="inne menu__" href="#schronisko">Schronisko</a>
+          <a class="schronisko menu__" href="#licznik">Licznik</a>
           <a class="galeria menu__" href="#galeria">Galeria</a>
+          <a class="inne menu__" href="#schronisko">Schronisko</a>
+          
           <a class="cta menu__" href="#cta-1">Wiadomość</a>
         </div>
       </div>
@@ -55,8 +56,53 @@
           chcesz mnie lepiej poznać? Dalej, naciśnij przycisk lub przewijaj dalej! </p>
           <a href="#licznik" class="btn-hero">Czytaj wiecej &darr;</a>
         </section>
-        <img src="043(1).jpg" alt="Tracy odpoczywa w lezu na balkonie w Szczawie" class="img-hero">
+        <img src="./img/043(1).jpg" alt="Tracy odpoczywa w lezu na balkonie w Szczawie" class="img-hero">
       </section>
+
+
+        <!-- SECTION ADVENTURES  -->
+
+        <section class="section-adventures" id="przygody">
+          <h2 class="section-title"> Moje przygody </h2>
+          <div class="adventures-cont">
+
+            <p>
+              Po prawej na zdjęciu kadr z 25 kilometrowego spaceru <strong>Niebieskim Szlakiem Warowni Jurajskich</strong>. Było cięzko ale dałam radę, trzeba było tylko <em>opiekunów</em> popędzać. Wyraźnie niemogli za mną nadazyć, ale jakoś doczłapali...
+            </p>
+
+            
+              <img class="adventures-photos" src="./img/spacer.JPG" alt="spacer">
+
+
+            </div>
+          </div>
+
+          <div class="adventures-cont">
+          
+            <img class="adventures-photos" src="./img/mogielica.JPG" alt="spacer na szczyt mogielicy">
+            
+
+          
+
+            <p>
+              Moja pierwsza wyprawa w prawidziwe <em>"Góry"</em>. Oczywiście zabrałam ze sobą opiekunów cóz dobry ze mnie Pies. Udało się zdobyć szczyt Mogielicy <strong>1170 n.p.m</strong> w niecałe 3 godziny. Myśle ze to dobry wynik!
+            </p>
+
+            
+          </div>
+          <div class="adventures-cont">
+
+            <p>
+              Tym razem postanowiłam zabrać wszystkich do Tarnowa na Góre Marcinke. Towarzyszyły nam piękne widoki i świetna pogoda. Wyszły bardzo dobre zdjęcia, takie przygody to ja lubię!
+            </p>
+
+            
+              <img src="./img/tarnow.jpg"  class="adventures-photos" alt="pies na tle szczytu">
+          
+          </div>
+          
+        </section>
+
 
 <!-- SECTION INTRODUCTION -->
 
@@ -78,48 +124,37 @@
           </p>
         </section>
 
-        <!-- SECTION ADVENTURES  -->
+          <!-- SECTION CAROUSEL -->
 
-        <section class="section-adventures" id="przygody">
-          <h2 class="section-title"> Moje przygody </h2>
-          <div class="adventures-cont">
-
-            <p>
-              Po prawej na zdjęciu kadr z 25 kilometrowego spaceru <strong>Niebieskim Szlakiem Warowni Jurajskich</strong>. Było cięzko ale dałam radę, trzeba było tylko <em>opiekunów</em> popędzać. Wyraźnie niemogli za mną nadazyć, ale jakoś doczłapali...
-            </p>
-
-            
-              <img class="adventures-photos" src="spacer.JPG" alt="spacer">
-
-
+          <section class="section-carousel" id="galeria">
+            <div class="section-title">Moja mała galeria</div>
+  
+            <div class="carousel">
+              
+              <div  class='slide'><img src="./img/karuzela1.JPG" alt="1"/></div>
+              <div  class='slide'><img   src="./img/karuzela2.JPG" alt="1"/></div>
+              <div  class='slide'><img src="./img/karuzela3.JPG" alt="1"/></div>
+              <div  class='slide'><img  src="./img/karuzela4.JPG" alt="1"/></div>
+              
+  
+              <button class="btn left">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon-style" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+                
+              </button>
+              <button class="btn right">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon-style" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+                
+                
+              </button>
+              <div class="dots"></div>
             </div>
-          </div>
-
-          <div class="adventures-cont">
-          
-            <img class="adventures-photos" src="mogielica.JPG" alt="spacer">
+  
             
-
-          
-
-            <p>
-              Moja pierwsza wyprawa w prawidziwe <em>"Góry"</em>. Oczywiście zabrałam ze sobą opiekunów cóz dobry ze mnie Pies. Udało się zdobyć szczyt Mogielicy <strong>1170 n.p.m</strong> w niecałe 3 godziny. Myśle ze to dobry wynik!
-            </p>
-
-            
-          </div>
-          <div class="adventures-cont">
-
-            <p>
-              Tym razem postanowiłam zabrać wszystkich do Tarnowa na Góre Marcinke. Towarzyszyły nam piękne widoki i świetna pogoda. Wyszły bardzo dobre zdjęcia, takie przygody to ja lubię!
-            </p>
-
-            
-              <img src="tarnow.jpg"  class="adventures-photos" alt="spacer">
-          
-          </div>
-          
-        </section>
+          </section>
 
         <!-- SECTION FROM  -->
 
@@ -127,7 +162,7 @@
         <h2 class="section-title">Skąd pochodzę </h2>
         <div class="map-flex">
           <div class="tracy-from">
-            <img src="tracyschronisko.jpg" alt="Tracy w schronisku" class="from-img">
+            <img src="./img/tracyschronisko.jpg" alt="Tracy w schronisku" class="from-img">
             <p class="from-text">Pierwsze miesiące zycia spedziłam w  schronisku Janik pod Ostrowcem Świętokrzyskim. Jeśli chcesz takiego fajnego psiaka jak Ja, nie kupuj, tam jest ich pełno i czekają na Ciebie! U góry jedno z moich archiwalnych zdjęć ze schroniska.</p>
           </div>
         
@@ -138,7 +173,7 @@
             <p class="from-addr"><strong>Schronisko dla zwierząt <italic>"Janik"</strong></italic><br>Borowska 1, 27-415 Kunów</p>
             
             <a href="http://www.schronisko.ostrowiec.pl/">
-              <img class="from-img" src="schronisko.jpg" >   
+              <img class="from-img" src="./img/schronisko.jpg" >   
             </a> 
             <div id="map">
               
@@ -147,43 +182,11 @@
           </div>
 
         </section>
-
-        <!-- SECTION CAROUSEL -->
-
-        <section class="section-carousel" id="galeria">
-          <div class="section-title">Moja mała galeria</div>
-
-          <div class="carousel">
-            
-            <div  class='slide'><img src="./img/karuzela1.JPG" alt="1"/></div>
-            <div  class='slide'><img   src="./img/karuzela2.JPG" alt="1"/></div>
-            <div  class='slide'><img src="./img/karuzela3.JPG" alt="1"/></div>
-            <div  class='slide'><img  src="./img/karuzela4.JPG" alt="1"/></div>
-            
-
-            <button class="btn left">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon-style" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-              </svg>
-              
-            </button>
-            <button class="btn right">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon-style" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-              
-              
-            </button>
-            <div class="dots"></div>
-          </div>
-
-          
-        </section>
         
         <!-- SECTION CTA -->
         <section class="cta" id="cta-1">
+          <div class="section-title">Napisz do mnie!</div>
           <div class="cta-box">
-            <div class="section-title color">Napisz do mnie!</div>
 
             <form class="cta-form" action="#">
               

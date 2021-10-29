@@ -94,7 +94,6 @@ galeria.addEventListener("click", function () {
   nav.forEach((ele) => ele.classList.remove("active"));
   galeria.classList.add("active");
 });
-
 cta.addEventListener("click", function () {
   nav.forEach((ele) => ele.classList.remove("active"));
   cta.classList.add("active");
