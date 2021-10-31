@@ -90,6 +90,7 @@ support color : #B2E6C2 */
   margin-top: 40px;
   display: flex;
   flex-direction: column;
+  animation: moveLeft 2s ease-out;
 }
 .hero-text {
   margin-top: 60px;
@@ -97,24 +98,45 @@ support color : #B2E6C2 */
   line-height: 1.6;
   margin-bottom: 64px;
 }
+
 .btn-hero:link,
 .btn-hero:visited {
+  position: relative;
   display: inline-block;
   font-size: 40px;
   text-decoration: none;
   color: #fff;
-  border-radius: 20px;
+  border-radius: 100px;
   background-color: #236c39;
   margin: 0 auto;
-  padding: 5px 10px;
+  padding: 10px 20px;
+  z-index: 0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
-.btn-hero:hover,
-.btn-hero:active {
-  background-color: #b2e6c2;
+
+.btn-hero::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: #236c39;
+  transition: all 0.4s;
 }
+
+.btn-hero:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
 .img-hero {
   border-radius: 20000px;
   margin: 0 auto;
+  animation: moveRight 2s ease-out;
 }
 
 /* COUNTER SECTION */
@@ -168,7 +190,7 @@ support color : #B2E6C2 */
 }
 /* SECTION ADVENTURES */
 .section-adventures {
-  margin-top: 200px;
+  margin-top: 100px;
 }
 .adventures-cont {
   display: flex;
@@ -187,8 +209,8 @@ support color : #B2E6C2 */
   width: 40%;
   border-radius: 2%;
   transition: all 0.4s;
-
-  border-radius: 17% 83% 18% 82% / 100% 0% 100% 0%;
+  box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.7);
+  border-radius: 40px;
 }
 .adventures-photos:hover {
   transform: scale(115%);
@@ -391,4 +413,43 @@ support color : #B2E6C2 */
   height: 32px;
   border-radius: 10px;
   padding-left: 5px;
+}
+
+/* UNIVERSAL SELECTORS */
+
+.bold {
+  font-weight: 700;
+  color: #236c39;
+}
+
+.italic {
+  font-style: oblique;
+}
+/* Animations */
+@keyframes moveLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
