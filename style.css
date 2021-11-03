@@ -457,3 +457,21 @@ support color : #B2E6C2 */
     transform: translateX(0);
   }
 }
+
+/* FOOTER  */
+
+.footer-container {
+  background-color: #236c39;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 100px;
+}
+
+.footer-container a:link,
+.footer-container a:visited,
+.footer-container p {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+}
