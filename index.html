@@ -137,8 +137,8 @@
   
             <div class="carousel">
               
-              <div  class='slide'><img src="./img/karuzela1.JPG" alt="1"/></div>
               <div  class='slide'><img   src="./img/karuzela2.JPG" alt="1"/></div>
+              <div  class='slide'><img src="./img/karuzela1.JPG" alt="1"/></div>
               <div  class='slide'><img src="./img/karuzela3.JPG" alt="1"/></div>
               <div  class='slide'><img  src="./img/karuzela4.JPG" alt="1"/></div>
               
@@ -192,17 +192,17 @@
           <div class="section-title">Napisz do mnie!</div>
           <div class="cta-box">
 
-            <form class="cta-form" netlify>
+            <form class="cta-form" method="POST" netlify>
               
               <div>
                   <label for="text">Wiadomość</label>
-                  <textarea class="textbox"  id="text" placeholder="Czym chcesz się ze mną podzielić?" required></textarea>
+                  <textarea class="textbox"  id="text" placeholder="Czym chcesz się ze mną podzielić?" name="message" required></textarea>
               </div>
 
               <div>
                 <label for="email">Twój e-mail</label>
-                <input id="email" type="email" placeholder="przykładowy@mail.com" required>
-                <button class='btn-form'>Wyślij!</button>
+                <input id="email" type="email" placeholder="przykładowy@mail.com" name="email" required>
+                <button type="submit" class='btn-form'>Wyślij!</button>
               </div>
 
 
