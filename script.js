@@ -2,18 +2,26 @@
 
 //QUERYSELECTORS
 
-const start = document.querySelector(".start");
-const schronisko = document.querySelector(".schronisko");
-const zdjecia = document.querySelector(".zdjecia");
-const inne = document.querySelector(".inne");
-const galeria = document.querySelector(".galeria");
-const cta = document.querySelector(".cta");
 const nav = document.querySelectorAll(".menu__");
 const stickyNav = document.body;
 const sectionIntro = document.querySelector(".section-introduction");
 const sectionHero = document.querySelector(".hero-section");
 const counters = document.querySelectorAll(".num");
 
+const slides = document.querySelectorAll(".slide");
+const slide = document.querySelector(".carousel");
+const btnLeft = document.querySelector(".left");
+const btnRight = document.querySelector(".right");
+const dotContainter = document.querySelector(".dots");
+
+const navArr = [
+  document.querySelector(".start"),
+  document.querySelector(".schronisko"),
+  document.querySelector(".zdjecia"),
+  document.querySelector(".inne"),
+  document.querySelector(".galeria"),
+  document.querySelector(".cta"),
+];
 /////////////////
 // TRACY AGE
 
@@ -69,34 +77,11 @@ const marker = L.marker([50.974, 21.322]).addTo(mymap);
 
 //////////////////////
 // Event Listeners
-start.addEventListener("click", function () {
-  nav.forEach((ele) => ele.classList.remove("active"));
-  start.classList.add("active");
-});
-
-schronisko.addEventListener("click", function () {
-  nav.forEach((ele) => ele.classList.remove("active"));
-  schronisko.classList.add("active");
-  maper.style.display = "block";
-});
-
-zdjecia.addEventListener("click", function () {
-  nav.forEach((ele) => ele.classList.remove("active"));
-  zdjecia.classList.add("active");
-});
-
-inne.addEventListener("click", function () {
-  nav.forEach((ele) => ele.classList.remove("active"));
-  inne.classList.add("active");
-});
-
-galeria.addEventListener("click", function () {
-  nav.forEach((ele) => ele.classList.remove("active"));
-  galeria.classList.add("active");
-});
-cta.addEventListener("click", function () {
-  nav.forEach((ele) => ele.classList.remove("active"));
-  cta.classList.add("active");
+navArr.forEach((query) => {
+  query.addEventListener("click", function () {
+    nav.forEach((ele) => ele.classList.remove("active"));
+    query.classList.add("active");
+  });
 });
 
 /////////////////////////////////////
@@ -167,12 +152,6 @@ obsNav.observe(sectionHero);
 // CAROUSEL //////////////////////////////
 
 let curSlide = 0;
-
-const slides = document.querySelectorAll(".slide");
-const slide = document.querySelector(".carousel");
-const btnLeft = document.querySelector(".left");
-const btnRight = document.querySelector(".right");
-const dotContainter = document.querySelector(".dots");
 
 const activeDot = function (slide) {
   document
