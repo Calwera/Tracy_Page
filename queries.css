@@ -171,4 +171,44 @@
   .nav-open .icon-mobile[name="menu-outline"] {
     display: none;
   }
+
+  .map-flex {
+    grid-template-columns: 1fr;
+  }
+
+  #map {
+    margin-left: 0;
+  }
+}
+
+/* BELOW 500PX */
+@media (max-width: 32rem) {
+  .main-title {
+    font-size: 2rem;
+  }
+  .hero-text {
+    font-size: 0.8rem;
+  }
+
+  .btn-hero:link,
+  .btn-hero:visited {
+    font-size: 1.5rem;
+  }
+  .section-adventures {
+    margin-top: 1rem;
+  }
+  .adventures-photos {
+    width: 90%;
+  }
+
+  .adventures-cont {
+    margin: 2rem;
+  }
+  .adventures-cont p {
+    margin: 2rem;
+  }
+
+  .grid-2-columns {
+    display: block;
+  }
 }
