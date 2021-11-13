@@ -2,6 +2,7 @@
 <html lang="pl">
   <head>
     <link rel="stylesheet" href="style.css"> <meta charset="UTF-8" />
+    <link rel="stylesheet" href="queries.css"> <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -37,9 +38,15 @@
     <!-- NAVIGATION -->
 
     <section class="main-nav">
+     
       <div class="topnav">
-        <img src="./img/logo_transparent.png" class="logo" alt="logo tracy" />
-        <div class="nav-links">
+        <!-- <img src="./img/logo_transparent.png" class="logo" alt="logo tracy" /> -->
+        <button class="btn-mobile-nav">
+          <ion-icon class ="icon-mobile" name="menu-outline"></ion-icon></button>
+          <button class="btn-mobile-nav">
+            <ion-icon class ="icon-mobile" name="close-outline"></ion-icon>
+          </button>
+        <div class="nav-links ">
           <a class="start active menu__" href="#">Start</a>
           <a class="zdjecia menu__" href="#przygody">Przygody</a>
           <a class="schronisko menu__" href="#licznik">Licznik</a>
@@ -48,8 +55,9 @@
           
           <a class="cta menu__" href="#cta-1">Wiadomość</a>
         </div>
+          
       </div>
-    </section>
+  </section>
 
     <!-- HERO SECTION -->
 

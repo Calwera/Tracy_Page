@@ -34,15 +34,15 @@ support color : #B2E6C2 */
 /* Navigation */
 
 .topnav {
-  background-color: #6fd08c;
-  display: flex;
   text-align: center;
   justify-content: space-between;
   height: 5rem;
 }
 
 .nav-links {
+  background-color: #6fd08c;
   align-self: center;
+  display: flex;
 }
 
 .topnav a {
@@ -353,7 +353,7 @@ support color : #B2E6C2 */
 
 .cta-box {
   position: relative;
-  width: 100rem;
+
   margin: 0 auto;
   border-radius: 20px;
   overflow: hidden;
@@ -478,4 +478,23 @@ support color : #B2E6C2 */
   text-decoration: none;
   color: #fff;
   font-size: 2rem;
+}
+
+/* MOBILE NAVIGATION */
+
+.btn-mobile-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  display: none;
+}
+.icon-mobile {
+  height: 4rem;
+  width: 4rem;
+  color: #333;
+}
+
+.icon-mobile[name="close-outline"] {
+  display: none;
 }

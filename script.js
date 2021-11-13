@@ -1,12 +1,15 @@
 "use strict";
 
 //QUERYSELECTORS
-
+const screen = window.screen.width;
+console.log(screen);
 const nav = document.querySelectorAll(".menu__");
 const stickyNav = document.body;
 const sectionIntro = document.querySelector(".section-introduction");
 const sectionHero = document.querySelector(".hero-section");
 const counters = document.querySelectorAll(".num");
+const mobileNavigation = document.querySelectorAll(".btn-mobile-nav");
+const navigationHelper = document.querySelector(".main-nav");
 
 const slides = document.querySelectorAll(".slide");
 const slide = document.querySelector(".carousel");
@@ -77,10 +80,20 @@ const marker = L.marker([50.974, 21.322]).addTo(mymap);
 
 //////////////////////
 // Event Listeners
+
 navArr.forEach((query) => {
   query.addEventListener("click", function () {
     nav.forEach((ele) => ele.classList.remove("active"));
     query.classList.add("active");
+    navigationHelper.classList.toggle("nav-open");
+  });
+});
+
+// Navigation Mobile
+
+mobileNavigation.forEach((nav) => {
+  nav.addEventListener("click", function () {
+    navigationHelper.classList.toggle("nav-open");
   });
 });
 
@@ -129,26 +142,29 @@ observer.observe(sectionIntro);
 ///////////////////////
 
 // STICKY NAV MENU OBSERVER
-const obsNav = new IntersectionObserver(
-  function (entries, observer) {
-    entries.forEach((entry) => {
-      counters.forEach((counter, i) => {
-        if (!entry.isIntersecting) {
-          stickyNav.classList.add("sticky");
-          return;
-        }
-        stickyNav.classList.remove("sticky");
+if (screen > 652) {
+  const obsNav = new IntersectionObserver(
+    function (entries, observer) {
+      entries.forEach((entry) => {
+        counters.forEach((counter, i) => {
+          if (!entry.isIntersecting) {
+            stickyNav.classList.add("sticky");
+            return;
+          }
+          stickyNav.classList.remove("sticky");
+        });
       });
-    });
-  },
-  {
-    root: null,
-    threshold: 0,
-  }
-);
+    },
+    {
+      root: null,
+      threshold: 0,
+    }
+  );
 
-obsNav.observe(sectionHero);
-
+  obsNav.observe(sectionHero);
+} else {
+  stickyNav.classList.add("sticky");
+}
 // CAROUSEL //////////////////////////////
 
 let curSlide = 0;
@@ -214,3 +230,5 @@ dotContainter.addEventListener("click", function (e) {
     activeDot(slide);
   }
 });
+
+// MOBILE NAVIGATION

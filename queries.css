@@ -1,0 +1,174 @@
+/* BELOW 1420 px */
+@media (max-width: 90em) {
+  .main-title {
+    font-size: 6rem;
+  }
+  .img-hero {
+    max-width: 80%;
+  }
+}
+
+/* BELOW 1050 px */
+@media (max-width: 66em) {
+  .main-title {
+    font-size: 4rem;
+  }
+  .hero-text {
+    font-size: 1.4rem;
+  }
+  .btn-hero:link,
+  .btn-hero:visited {
+    font-size: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 4rem;
+  }
+
+  .adventures-cont p {
+    font-size: 1.4rem;
+  }
+
+  .carousel {
+    max-width: 65rem;
+  }
+
+  .from-text {
+    font-size: 1.4rem;
+  }
+
+  .from-addr {
+    font-size: 1.8rem;
+  }
+
+  #map {
+    height: 18rem;
+    width: 18rem;
+  }
+  .footer-container a:link,
+  .footer-container a:visited,
+  .footer-container p {
+    font-size: 1.2rem;
+  }
+
+  .cta-box {
+    width: 80%;
+  }
+  .adventures-cont {
+    flex-direction: column;
+    align-items: center;
+  }
+  .adventures-cont p {
+    margin: 2rem;
+  }
+
+  .adventures-photos {
+    width: 60%;
+  }
+
+  .btn-form {
+    font-size: 2rem;
+  }
+
+  .textbox {
+    width: 20rem;
+    height: 15rem;
+  }
+}
+
+/* BELOW 660 PX */
+@media (max-width: 42.5rem) {
+  .main-title {
+    font-size: 3rem;
+  }
+  .hero-text {
+    font-size: 1.2rem;
+  }
+
+  .btn-hero:link,
+  .btn-hero:visited {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+  }
+  .section-introduction {
+    margin: 10rem 0;
+  }
+  .section-from {
+    margin: 10rem 0;
+  }
+
+  .btn-form {
+    font-size: 1.5rem;
+  }
+
+  .textbox {
+    width: 15rem;
+    height: 7.5rem;
+  }
+  .cta-form {
+    grid-template-columns: 1fr;
+  }
+
+  .main-nav {
+    position: relative;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    background-color: #fff;
+    color: #333;
+    transition: all 0.5s;
+
+    /* HIDE nav */
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  .nav-links:last-child {
+    padding-bottom: 100vh;
+  }
+
+  .btn-mobile-nav {
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 400;
+
+    background-color: #fff;
+    border-radius: 50%;
+  }
+
+  .topnav {
+    height: 0;
+  }
+  .topnav a {
+    color: #333;
+    font-size: 3rem;
+  }
+
+  .sticky .hero-section {
+    margin-top: 0;
+  }
+
+  .nav-open .nav-links {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+  }
+  .nav-open .icon-mobile[name="close-outline"] {
+    display: block;
+  }
+
+  .nav-open .icon-mobile[name="menu-outline"] {
+    display: none;
+  }
+}
