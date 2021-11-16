@@ -227,10 +227,7 @@
     margin-top: 2rem;
   }
   #map {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    display: none;
   }
 
   .cta-form {
