@@ -139,8 +139,8 @@
   .btn-mobile-nav {
     display: inline-block;
     position: fixed;
-    top: 0;
-    right: 0;
+    top: 2.5%;
+    right: 2.5%;
     z-index: 400;
 
     background-color: #fff;
@@ -183,19 +183,18 @@
 
 /* BELOW 500PX */
 @media (max-width: 32rem) {
-  .main-title {
-    font-size: 2rem;
+  .section-adventures {
+    margin-top: 1rem;
   }
-  .hero-text {
-    font-size: 0.8rem;
+
+  .hero-section {
+    grid-template-columns: 1fr;
   }
 
   .btn-hero:link,
   .btn-hero:visited {
-    font-size: 1.5rem;
-  }
-  .section-adventures {
-    margin-top: 1rem;
+    margin-bottom: 3rem;
+    font-size: 3rem;
   }
   .adventures-photos {
     width: 90%;
@@ -210,5 +209,52 @@
 
   .grid-2-columns {
     display: block;
+  }
+
+  .from-img {
+    width: 90%;
+  }
+
+  .section-from {
+    margin: 2rem 0;
+  }
+
+  .map-flex {
+    margin: 0;
+  }
+  .from-addr {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  #map {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .cta-form {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .cta-box::before {
+    display: none;
+    text-align: center;
+  }
+
+  .textbox {
+    width: 20rem;
+    height: 15rem;
+  }
+
+  .btn-form {
+    margin-bottom: 2rem;
+  }
+
+  .footer-container {
+    gap: 0.2rem;
+    margin-top: 2rem;
   }
 }
